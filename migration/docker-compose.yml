@@ -1,0 +1,28 @@
+version: "1"
+# services:
+#   migration:
+#     build: .
+#     environment:
+#       - POSTGRES_DB=${DB_NAME}
+#       - POSTGRES_USER=${DB_USER}
+#       - POSTGRES_PASSWORD=${DB_PASSWORD}
+#       - POSTGRES_HOST=${MIGRATION_DB_HOST}
+#       - POSTGRES_PORT=${DB_PORT}
+#         - POSTGRES_USER=proxyuser
+#         - POSTGRES_PAxxxxSSWORD=pE8Ah0AO9pK4IwJG
+#     volumes:
+#       - .:/app/
+#     command: ["sh", "-c", "python3 manage.py makemigrations models && python3 manage.py migrate"]
+
+services:
+  migration:
+    build: .
+    environment:
+      - POSTGRES_DB=testaja
+      - POSTGRES_USER=santika
+      - POSTGRES_PASSWORD=my_password
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5432
+    volumes:
+      - .:/app/
+    command: ["sh", "-c", "python3 manage.py makemigrations source && python3 manage.py migrate"]
