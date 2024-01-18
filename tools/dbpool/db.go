@@ -84,7 +84,7 @@ func New(writeCfg *Config, readCfgs []*Config, cfg *ConnectionConfig) (*DBPools,
 }
 
 func createDB(cfg *Config, connCfg *ConnectionConfig) (*sql.DB, error) {
-	datasource := "host=" + cfg.DBHost + " port=" + cfg.DBPort + " user=" + cfg.DBUser + " dbname=" + cfg.DBName + " password=" + cfg.DBPassword + " sslmode=disable"
+	datasource := "host=" + cfg.DBHost + " port=" + cfg.DBPort + " user=" + cfg.DBUser + " dbname=" + cfg.DBName + " password=" + cfg.DBPassword + " sslmode=require"
 	db, err := sql.Open("postgres", datasource)
 	if err != nil {
 		return nil, err
