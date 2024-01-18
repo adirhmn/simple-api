@@ -18,10 +18,10 @@ services:
   migration:
     build: .
     environment:
-      - POSTGRES_DB=testaja
-      - POSTGRES_USER=santika
-      - POSTGRES_PASSWORD=my_password
-      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_DB=rds-webapp
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_HOST=rds-webapp.c74owswicwy5.ap-southeast-1.rds.amazonaws.com
       - POSTGRES_PORT=5432
     volumes:
       - .:/app/
